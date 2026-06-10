@@ -47,11 +47,11 @@
     overflow: hidden;
   }
   .banner img {
-    min-width: 1600px;   /* <- forces overflow on smaller screens */
-    height: 420px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
-    /* no responsive scaling: img won't shrink with the viewport */
+    /* Responsive scaling: img will shrink with the viewport */
   }
   .banner-caption {
     position: absolute;
@@ -88,7 +88,7 @@
 
   <section class="banner">
     <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1600&q=80" alt="Roasted coffee beans">
-    <div class="banner-caption">
+    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1600&q=80" alt="Roasted coffee beans">
       <h1>Roasted by the sea.</h1>
       <p>Single-origin beans, small batches, since 2009.</p>
     </div>
