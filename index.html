@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastline Coffee Roasters</title>
+<style>
+  :root {
+    --ink: #1a1410;
+    --cream: #f3ece0;
+    --rust: #b5532a;
+    --sand: #d8c4a5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--cream);
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2.5rem;
+    border-bottom: 1px solid var(--sand);
+  }
+  .brand { font-size: 1.3rem; letter-spacing: 0.08em; font-weight: bold; }
+  .nav a {
+    margin-left: 1.8rem;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nav a:hover { color: var(--rust); }
+
+  /* BANNER — the bug lives here.
+     The <img> has a fixed pixel width larger than the viewport at half-screen.
+     min-width forces it to overflow and the picture gets clipped/misaligned,
+     so it only "fits" when the window is maximized. */
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+  .banner img {
+    min-width: 1600px;   /* <- forces overflow on smaller screens */
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    /* no responsive scaling: img won't shrink with the viewport */
+  }
+  .banner-caption {
+    position: absolute;
+    left: 3rem;
+    bottom: 2.5rem;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+  .banner-caption h1 { font-size: 2.8rem; font-weight: normal; }
+  .banner-caption p { font-size: 1rem; margin-top: 0.4rem; letter-spacing: 0.04em; }
+
+  .content { max-width: 760px; margin: 4rem auto; padding: 0 2rem; }
+  .content h2 { color: var(--rust); font-size: 1.6rem; margin-bottom: 1rem; }
+  .content p { line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.2rem; }
+
+  footer {
+    border-top: 1px solid var(--sand);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6b5d4d;
+  }
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">COASTLINE ROASTERS</div>
+    <nav class="nav">
+      <a href="#">Beans</a>
+      <a href="#">Story</a>
+      <a href="#">Visit</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1600&q=80" alt="Roasted coffee beans">
+    <div class="banner-caption">
+      <h1>Roasted by the sea.</h1>
+      <p>Single-origin beans, small batches, since 2009.</p>
+    </div>
+  </section>
+
+  <main class="content">
+    <h2>Where the fog meets the roast</h2>
+    <p>Every morning the coastal mist rolls in before the burners do. We pull our greens from a handful of farms we've visited in person, then roast in batches small enough to taste every step.</p>
+    <p>Drop by the roastery on weekends. The cupping table is open, the kettle is on, and there's usually a dog asleep by the window.</p>
+  </main>
+
+  <footer>
+    © 2026 Coastline Roasters · Half Moon Bay
+  </footer>
+</body>
+</html>
