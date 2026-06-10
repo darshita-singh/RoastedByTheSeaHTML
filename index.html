@@ -45,18 +45,13 @@
     width: 100%;
     height: 420px;
     overflow: hidden;
-    height: 35vw;
-    min-height: 220px;
-    max-height: 420px;
-    aspect-ratio: 16/5;
-    overflow: hidden;
+  }
   .banner img {
-    width: 100%;
-    height: 100%;
+    min-width: 1600px;   /* <- forces overflow on smaller screens */
+    height: 420px;
     object-fit: cover;
     display: block;
-    min-width: 0;
-    /* Responsive scaling: img will shrink with the viewport */
+    /* no responsive scaling: img won't shrink with the viewport */
   }
   .banner-caption {
     position: absolute;
@@ -97,7 +92,6 @@
       <h1>Roasted by the sea.</h1>
       <p>Single-origin beans, small batches, since 2009.</p>
     </div>
-  </section>
   </section>
 
   <main class="content">
